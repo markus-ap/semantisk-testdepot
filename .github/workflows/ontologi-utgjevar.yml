@@ -1,0 +1,22 @@
+name: Utgje
+
+on:
+  push:
+    branches:
+      - "hovud"
+  workflow_dispatch:
+
+jobs:
+  utgje:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10' 
+      - run: |
+      python pylode/vevskrivar.py
+      git add .
+      git commit -m "automatisk utgjevelse"
+      git push 
+      
