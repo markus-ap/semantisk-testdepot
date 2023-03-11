@@ -17,14 +17,11 @@ jobs:
       - run: |
           pip install -r pylode_krav.txt
           python pylode/vevskrivar.py
-          
           if git diff --exit-code; then
               git config user.name 'github-actions[bot]'
               git config user.email 'github-actions[bot]@users.noreply.github.com'
               git add .
               git commit -m "automatisk utgjevelse"
               git push 
-              
-          exit 0
-          
+          exit 0         
           
