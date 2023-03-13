@@ -15,7 +15,7 @@ jobs:
         with:
           python-version: '3.10' 
       - run: |
-          pip install -r pylode_krav.txt
+          sudo pip install -r pylode_krav.txt
           python pylode/vevskrivar.py
           if git diff --exit-code; then
               git config user.name 'github-actions[bot]'
@@ -23,5 +23,4 @@ jobs:
               git add .
               git commit -m "automatisk utgjevelse"
               git push 
-          exit 0         
-          
+          fi
